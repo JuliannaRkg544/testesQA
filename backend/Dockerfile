@@ -36,9 +36,3 @@ RUN buildDeps=" \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version
-
-# # Use the default production configuration
-# RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-# # Set timezone in PHP ini
-# RUN echo "date.timezone = "$TZ"" >> "$PHP_INI_DIR/php.ini"
-# RUN echo "expose_php = Off" >> "$PHP_INI_DIR/php.ini"

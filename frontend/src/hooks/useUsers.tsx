@@ -5,11 +5,7 @@ import withReactContent from 'sweetalert2-react-content'
 
 const MySwal = withReactContent(Swal);
 
-//import {api} from '../services/api'
-
-const api = axios.create({
-    baseURL: `http://localhost:8080/api/`
-})
+import {api} from '../services/api'
 
 interface User {
     id_user: number,

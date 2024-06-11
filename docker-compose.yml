@@ -31,6 +31,21 @@ services:
       - ./backend:/var/www/html
     command: sh -c "composer install && apache2-foreground"
 
+  frontend:
+    image: node:16.20.1-alpine
+    container_name: qa_test_frontend
+    user: root
+    depends_on:
+      - backend
+    environment:
+      - HTTPS=true
+      - WDS_SOCKET_PORT=0
+    ports:
+      - 5400:3000
+    volumes:
+      - ./frontend:/app
+    command: sh -c "npm install --legacy-peer-deps --verbose && export HTTPS=true && npm start"
+
 networks:
   default:
     name: qa_test_network

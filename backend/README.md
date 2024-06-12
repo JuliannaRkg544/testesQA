@@ -104,7 +104,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  ```json
  {
      "name": "string",
-     "email": "string",
+     "e-mail": "string",
      "companies": ["string"]
  }
  ```
@@ -122,7 +122,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  ```json
  {
      "name": "string",
-     "email": "string",
+     "e-mail": "string",
      "companies": ["string"]
  }
  ```
@@ -173,13 +173,13 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
      "name": "string",
      "cnpj": "string",
      "adress": {
-     "cep": "string",
-     "country": "string",
-     "state": "string",
-     "city": "string",
-     "street": "string",
-     "number": "string",
-     "district": "string"
+         "cep": "string",
+         "country": "string",
+         "city": "string",
+         "street_location": "string",
+         "number": "string",
+         "district": "string"
+    }
  }
  ```
 - **Possible Returns:**
@@ -198,13 +198,14 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
      "name": "string",
      "cnpj": "string",
      "adress": {
-     "cep": "string",
-     "country": "string",
-     "state": "string",
-     "city": "string",
-     "street": "string",
-     "number": "string",
-     "district": "string"
+         "cep": "string",
+         "country": "string",
+         "state": "string",
+         "city": "string",
+         "street": "string",
+         "number": "string",
+         "district": "string"
+    }
  }
  ```
 - **Possible Returns:**

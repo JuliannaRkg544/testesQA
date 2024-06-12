@@ -65,12 +65,163 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - Outras entidades e relacionamento entre entidades. Por exemplo: uma entidade `Relatos` ou `Atividades` que tenha `Usuários` e/ou `Empresas` vinculadas.
 - Separação em commits, especialmente com boas mensagens de identificação.
 
-## RODANDO O SERVIDOR
-- O banco de dados deve estar rodando no servidor com a porta 3306
-    CREDENCIAIS: 
-        - host: localhost;
-        - port: 3306;
-        - user: root;
-        - password: `SEM SENHA`
+# API Documentation
+## Routes
 
-- Após rodar o comnado "composer install", o servidor deve ser iniciado na porta 8080 com o comando "php -S localhost:8080"
+### Home Route
+- **Path:** `/`
+- **Parameters:** None
+- **HTTP Method:** GET
+- **Body:** None
+- **Possible Returns:**
+ - 200: `{"msg": "home"}`
+
+### User Routes
+
+#### Get All Users
+- **Path:** `/api/user`
+- **Parameters:** None
+- **HTTP Method:** GET
+- **Body:** None
+- **Possible Returns:**
+ - 200: List of users
+
+#### Get User by ID
+- **Path:** `/api/user/{id}`
+- **Parameters:**
+ - `id`: User ID
+- **HTTP Method:** GET
+- **Body:** None
+- **Possible Returns:**
+ - 200: User data
+ - 400: Bad request
+ - 500: Internal server error
+
+#### Create User
+- **Path:** `/api/user/create`
+- **Parameters:** None
+- **HTTP Method:** POST
+- **Body:**
+ ```json
+ {
+ "name": "string",
+ "email": "string",
+ "companies": ["string"]
+ }
+ ```
+- **Possible Returns:**
+ - 201: Created user data
+ - 400: Bad request
+ - 500: Internal server error
+
+#### Update User
+- **Path:** `/api/user/{id}/update`
+- **Parameters:**
+ - `id`: User ID
+- **HTTP Method:** PATCH
+- **Body:**
+ ```json
+ {
+ "name": "string",
+ "email": "string",
+ "companies": ["string"]
+ }
+ ```
+- **Possible Returns:**
+ - 200: Updated user data
+ - 400: Bad request
+ - 500: Internal server error
+
+#### Delete User
+- **Path:** `/api/user/{id}/delete`
+- **Parameters:**
+ - `id`: User ID
+- **HTTP Method:** DELETE
+- **Body:** None
+- **Possible Returns:**
+ - 200: Deletion confirmation
+ - 400: Bad request
+ - 500: Internal server error
+
+### Company Routes
+
+#### Get All Companies
+- **Path:** `/api/company`
+- **Parameters:** None
+- **HTTP Method:** GET
+- **Body:** None
+- **Possible Returns:**
+ - 200: List of companies
+
+#### Get Company by ID
+- **Path:** `/api/company/{id}`
+- **Parameters:**
+ - `id`: Company ID
+- **HTTP Method:** GET
+- **Body:** None
+- **Possible Returns:**
+ - 200: Company data
+ - 400: Bad request
+ - 500: Internal server error
+
+#### Create Company
+- **Path:** `/api/company/create`
+- **Parameters:** None
+- **HTTP Method:** POST
+- **Body:**
+ ```json
+ {
+ "name": "string",
+ "cnpj": "string",
+ "adress": {
+ "cep": "string",
+ "country": "string",
+ "state": "string",
+ "city": "string",
+ "street": "string",
+ "number": "string",
+ "district": "string"
+ }
+ }
+ ```
+- **Possible Returns:**
+ - 201: Created company data
+ - 400: Bad request
+ - 500: Internal server error
+
+#### Update Company
+- **Path:** `/api/company/{id}/update`
+- **Parameters:**
+ - `id`: Company ID
+- **HTTP Method:** PATCH
+- **Body:**
+ ```json
+ {
+ "name": "string",
+ "cnpj": "string",
+ "adress": {
+ "cep": "string",
+ "country": "string",
+ "state": "string",
+ "city": "string",
+ "street": "string",
+ "number": "string",
+ "district": "string"
+ }
+ }
+ ```
+- **Possible Returns:**
+ - 200: Updated company data
+ - 400: Bad request
+ - 500: Internal server error
+
+#### Delete Company
+- **Path:** `/api/company/{id}/delete`
+- **Parameters:**
+ - `id`: Company ID
+- **HTTP Method:** DELETE
+- **Body:** None
+- **Possible Returns:**
+ - 200: Deletion confirmation
+ - 400: Bad request
+ - 500: Internal server error

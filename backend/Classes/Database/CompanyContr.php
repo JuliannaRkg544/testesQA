@@ -3,7 +3,6 @@
 namespace ContatoSeguro\Classes\Database;
 
 use PDO;
-use ContatoSeguro\Classes\Database\MySql;
 
 class CompanyContr
 {
@@ -23,17 +22,13 @@ class CompanyContr
                           company.cnpj,
                           company.show,
                           adress.*,
-                          IF(LENGTH(tmp.users)>14, 
-													  CONCAT(SUBSTRING(tmp.users, 1,14	), "..."),
-														tmp.users
-														) AS users
+                          tmp.users AS users
 
                   FROM company LEFT JOIN adress
                   ON company.id_adress = adress.id_adress,
                   ( SELECT GROUP_CONCAT(" ",user.name) AS users
                     FROM user INNER JOIN user_company
-                    ON user.id_user = user_company.id_user
-                    WHERE user_company.id_company = "'.$id_company.'") AS tmp
+                    ON user.id_user = user_company.id_user) AS tmp
 
                   WHERE company.id_company = "'.$id_company.'"';
 

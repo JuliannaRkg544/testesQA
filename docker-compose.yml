@@ -38,14 +38,13 @@ services:
     depends_on:
       - backend
     environment:
-      - HTTPS=true
       - WDS_SOCKET_PORT=0
     ports:
       - 5400:3000
     volumes:
       - ./frontend:/app
     working_dir: /app
-    command: sh -c "npm install --legacy-peer-deps --verbose && export HTTPS=true && npm start"
+    command: sh -c "npm install --legacy-peer-deps --verbose && npm start"
 
 networks:
   default:

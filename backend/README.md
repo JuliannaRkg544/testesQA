@@ -103,9 +103,9 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - **Body:**
  ```json
  {
- "name": "string",
- "email": "string",
- "companies": ["string"]
+     "name": "string",
+     "email": "string",
+     "companies": ["string"]
  }
  ```
 - **Possible Returns:**
@@ -121,9 +121,9 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - **Body:**
  ```json
  {
- "name": "string",
- "email": "string",
- "companies": ["string"]
+     "name": "string",
+     "email": "string",
+     "companies": ["string"]
  }
  ```
 - **Possible Returns:**
@@ -170,17 +170,16 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - **Body:**
  ```json
  {
- "name": "string",
- "cnpj": "string",
- "adress": {
- "cep": "string",
- "country": "string",
- "state": "string",
- "city": "string",
- "street": "string",
- "number": "string",
- "district": "string"
- }
+     "name": "string",
+     "cnpj": "string",
+     "adress": {
+     "cep": "string",
+     "country": "string",
+     "state": "string",
+     "city": "string",
+     "street": "string",
+     "number": "string",
+     "district": "string"
  }
  ```
 - **Possible Returns:**
@@ -196,17 +195,16 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - **Body:**
  ```json
  {
- "name": "string",
- "cnpj": "string",
- "adress": {
- "cep": "string",
- "country": "string",
- "state": "string",
- "city": "string",
- "street": "string",
- "number": "string",
- "district": "string"
- }
+     "name": "string",
+     "cnpj": "string",
+     "adress": {
+     "cep": "string",
+     "country": "string",
+     "state": "string",
+     "city": "string",
+     "street": "string",
+     "number": "string",
+     "district": "string"
  }
  ```
 - **Possible Returns:**

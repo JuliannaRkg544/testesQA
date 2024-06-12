@@ -66,9 +66,8 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - Separação em commits, especialmente com boas mensagens de identificação.
 
 # API Documentation
-## Routes
 
-### Home Route
+## Home Route
 - **Path:** `/`
 - **Parameters:** None
 - **HTTP Method:** GET
@@ -76,9 +75,9 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - **Possible Returns:**
  - 200: `{"msg": "home"}`
 
-### User Routes
+## User Routes
 
-#### Get All Users
+### Get All Users
 - **Path:** `/api/user`
 - **Parameters:** None
 - **HTTP Method:** GET
@@ -86,7 +85,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - **Possible Returns:**
  - 200: List of users
 
-#### Get User by ID
+### Get User by ID
 - **Path:** `/api/user/{id}`
 - **Parameters:**
  - `id`: User ID
@@ -97,7 +96,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  - 400: Bad request
  - 500: Internal server error
 
-#### Create User
+### Create User
 - **Path:** `/api/user/create`
 - **Parameters:** None
 - **HTTP Method:** POST
@@ -114,7 +113,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  - 400: Bad request
  - 500: Internal server error
 
-#### Update User
+### Update User
 - **Path:** `/api/user/{id}/update`
 - **Parameters:**
  - `id`: User ID
@@ -132,7 +131,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  - 400: Bad request
  - 500: Internal server error
 
-#### Delete User
+### Delete User
 - **Path:** `/api/user/{id}/delete`
 - **Parameters:**
  - `id`: User ID
@@ -143,9 +142,9 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  - 400: Bad request
  - 500: Internal server error
 
-### Company Routes
+## Company Routes
 
-#### Get All Companies
+### Get All Companies
 - **Path:** `/api/company`
 - **Parameters:** None
 - **HTTP Method:** GET
@@ -153,7 +152,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
 - **Possible Returns:**
  - 200: List of companies
 
-#### Get Company by ID
+### Get Company by ID
 - **Path:** `/api/company/{id}`
 - **Parameters:**
  - `id`: Company ID
@@ -164,7 +163,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  - 400: Bad request
  - 500: Internal server error
 
-#### Create Company
+### Create Company
 - **Path:** `/api/company/create`
 - **Parameters:** None
 - **HTTP Method:** POST
@@ -189,7 +188,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  - 400: Bad request
  - 500: Internal server error
 
-#### Update Company
+### Update Company
 - **Path:** `/api/company/{id}/update`
 - **Parameters:**
  - `id`: Company ID
@@ -215,7 +214,7 @@ Aqui na Contato Seguro, utilizamos __Docker__ nos nossos ambientes, então será
  - 400: Bad request
  - 500: Internal server error
 
-#### Delete Company
+### Delete Company
 - **Path:** `/api/company/{id}/delete`
 - **Parameters:**
  - `id`: Company ID

@@ -22,7 +22,7 @@ export function NewUserModal({isOpen, onRequestClose}: NewUserModalProps){
 
     const multiselectStyle = {
         chips: { // To change css chips(Selected options)
-            background: 'var(--orange)'
+            background: 'var(--blue)'
         }
     }
     const [selectCompanies, setSelectCompanies] = useState([{id:4, name: "Empresa 1"}, {id:5, name: "Empresa 2"}, {id:6, name: "Empresa 3"}])

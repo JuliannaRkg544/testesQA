@@ -11,7 +11,7 @@ export const Container = styled.header `
 
 export const Content = styled.div `
 
-    background: var(--orange);
+    background: var(--blue);
     border-radius: 0.5rem 0.5rem 0 0;
     width: 100%;
     max-width: 1200px;

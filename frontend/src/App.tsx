@@ -11,14 +11,10 @@ export function App() {
 
   function handleOpenNewUserModal(){
     setIsNewUserModalOpen(true)
-    console.log('open')
-
   }
 
   function handleCloseNewUserModal(){
     setIsNewUserModalOpen(false)
-    console.log('close')
-
   }
 
   return (

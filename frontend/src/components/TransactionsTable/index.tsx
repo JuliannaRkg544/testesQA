@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useUsers } from "../../hooks/useUsers";
 import { Container } from "./styles";
 
@@ -8,7 +7,6 @@ import deleteImage from "../../assets/delete.png"
 export function TransactionsTable(){
 
     const {users,deleteUser} = useUsers()
-    console.log(users)
 
     return (
         <Container>
@@ -39,8 +37,17 @@ export function TransactionsTable(){
                             <td>{user.birth_city}</td>
                             <td>{user.companies}</td>
                             <td>
-                                <button><img src={editImage}></img></button>
-                                <button><img src={deleteImage} onClick={() => deleteUser(user.id_user)}></img></button>
+                                <button>
+                                    <img src={editImage} alt="edit" />
+                                </button>
+
+                                <button>
+                                    <img 
+                                        src={deleteImage} 
+                                        alt="delete"
+                                        onClick={() => deleteUser(user.id_user)}
+                                    />
+                                </button>
                             </td>
                         </tr>
 

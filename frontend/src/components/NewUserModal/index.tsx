@@ -1,5 +1,5 @@
-import { Container, RadioBox, TransactionTypeContainer } from "./styles";
-import { FormEvent, useState, useContext } from "react";
+import { Container } from "./styles";
+import { FormEvent, useState } from "react";
 import { Save } from "@material-ui/icons";
 import Modal from 'react-modal';
 import {Multiselect} from 'multiselect-react-dropdown';
@@ -25,7 +25,7 @@ export function NewUserModal({isOpen, onRequestClose}: NewUserModalProps){
             background: 'var(--blue)'
         }
     }
-    const [selectCompanies, setSelectCompanies] = useState([{id:4, name: "Empresa 1"}, {id:5, name: "Empresa 2"}, {id:6, name: "Empresa 3"}])
+    const [selectCompanies] = useState([{id:4, name: "Empresa 1"}, {id:5, name: "Empresa 2"}, {id:6, name: "Empresa 3"}])
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -113,19 +113,17 @@ export function NewUserModal({isOpen, onRequestClose}: NewUserModalProps){
                     emptyRecordMsg="Nenhum resultado correspondente..."
                     options={selectCompanies}
                     onSelect={event => {
-                        console.log(event)
                         let selected:number[] = []
 
-                        event.map((company:Company) => {
+                        event.forEach((company:Company) => {
                             selected.push(company.id)
                             setCompanies(selected)
                         })
                     }}
                     onRemove={event => {
-                        console.log(event)
                         let selected:number[] = []
 
-                        event.map((company:Company) => {
+                        event.forEach((company:Company) => {
                             selected.push(company.id)
                             setCompanies(selected)
                         })

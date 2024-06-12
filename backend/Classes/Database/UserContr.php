@@ -96,14 +96,12 @@ class UserContr
 														tmp.companies
 														) AS companies
 
-                  FROM    user LEFT JOIN  ( SELECT user_company.id_user,
+                  FROM    user CROSS JOIN  ( SELECT user_company.id_user,
                                                   GROUP_CONCAT(" ",company.name) AS companies
                                             FROM company INNER JOIN user_company
                                             ON company.id_company = user_company.id_company
                                             GROUP BY user_company.id_user) AS tmp
-                            ON user.id_user = tmp.id_user
-
-                  WHERE user.show = 1';
+                            ON user.id_user = tmp.id_user';
 
         $stmt = $this->mysql->prepare($query);
         $stmt->execute();

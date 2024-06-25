@@ -34,5 +34,9 @@ RUN buildDeps=" \
     && a2enmod deflate \
     && a2enmod ssl
 
+# restart apache with servername
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+RUN service apache2 restart
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version

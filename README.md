@@ -1,14 +1,14 @@
 # Teste Técnico
 
 ### 1. DESCRIÇÃO
-Este documento tem como objetivo avaliar suas habilidades e conhecimentos fundamentais na área de QA. Através deste teste buscamos entender sua capacidade de identificar e relatar bugs, criar casos de teste, criar testes de frontend e backend, criar teste automatizados e aplicar práticas de teste de maneira eficiente e eficaz.
+Este documento tem como objetivo avaliar suas habilidades e conhecimentos fundamentais na área de QA. Através deste teste buscamos entender sua capacidade de identificar e relatar bugs, criar casos de teste, documentar cenários, criar teste automatizados e aplicar práticas de QA de maneira eficiente e eficaz.
 
 Durante a realização do teste, você será avaliado sob as seguintes competências:
 
 - **Identificação e descrição de bugs**: Sua habilidade em encontrar e descrever bugs de forma clara e detalhada.
 - **Sinalização de melhorias**: Sua capacidade de apontar melhorias referente ao produto de forma coesa e explicativa.
-- **Criação de casos de teste**: Sua capacidade de elaborar casos de teste em BDD que cobrem os diversos cenários existentes na aplicação.
-- **Testes automatizados**: Sua capacidade de desenvolver e executar de forma lógica testes automatizados.
+- **Criação de casos de teste**: Sua capacidade de elaborar casos de teste usando o formato Gherkin para descrever os diversos cenários existentes na aplicação.
+- **Testes automatizados**: Sua capacidade de desenvolver e executar de forma lógica testes automatizados. **Estes testes são obrigatórios apenas para níveis júnior ou superior.**
 - **Documentação**: Sua habilidade em documentar os processos e resultados de testes de maneira organizada.
 
 ### 2. CONFIGURAÇÃO DO AMBIENTE
@@ -33,15 +33,26 @@ O projeto pode demorar para ser inicializado.
 ### 3. TESTE
 O projeto consiste em um CRUD de usuários para um grupo que contém diversas empresas.
 
-Seu desafio será testar o projeto por completo, documentando o máximo de cenários possíveis que encontrar, desenvolver os testes automatizados para o projeto e criar os testes de API sobre as rotas disponibilizadas na área API.
+Seu desafio será testar o projeto por completo, documentando o máximo de cenários possíveis que encontrar. Caso você tenha experiência, será avaliada também sua capacidade de desenvolver testes automatizados.
 
-O formulário de cadastro deve conter os campos de Nome, E-mail, Telefone, Data e Empresa como preenchimento obrigatório para realização do cadastro.
+O formulário de cadastro deve conter os campos de **Nome, E-mail, Telefone, Data e Empresa** como preenchimento obrigatório para realização do cadastro.
 
 Abaixo você encontrará instruções que deve seguir:
 
-- **Casos de teste**: Os casos devem ser documentados em BDD utilizando Gherkin para a documentação.
-- **Teste automatizado**: O tipo de teste automatizado avaliado será o E2E. De preferência, utilize o framework Cypress para criação dos testes.
-- **Testes de API**: Os testes de API devem ser documentados no formato BDD com Gherkin. De preferência, utilize o framework Postman ou Insomnia para a criação das rotas.
+### Instruções para Estagiários
+Para estagiários, não é necessário criar automações de testes. No entanto, conhecimento em automação será considerado um diferencial.
+
+#### Casos de Teste
+- Os casos devem ser documentados utilizando o formato Gherkin para a descrição dos cenários.
+
+### Instruções para Nível Júnior ou Superior
+#### Casos de Teste
+- Os casos devem ser documentados utilizando o formato Gherkin para a descrição dos cenários.
+- Importante: O uso de Gherkin é apenas para organização e clareza dos testes e não deve ser implementado utilizando ferramentas como Cucumber.
+
+#### Testes Automatizados
+- E2E e API: Utilize o framework Cypress para criação dos testes.
+- Importante: Não utilizamos padrões como Page Objects.
 
 ### 4. API
 
@@ -209,5 +220,3 @@ Para enviar seu projeto, siga os passos abaixo. É crucial o envio de todas as p
 1. **Repositório no GitHub**: Crie um repositório público no GitHub e forneça o link do repositório por e-mail.
 
 2. **Documentação**: Envie a documentação como anexo no e-mail ou disponibilize-a publicamente se estiver usando uma plataforma de documentação.
-
-3. **Teste de API**: As rotas criadas para o teste de API devem ser exportadas e enviadas em um arquivo com extensão `.json`. Preferencialmente, utilize as ferramentas Postman ou Insomnia para exportar as rotas.

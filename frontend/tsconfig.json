@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "types": ["cypress"],
+    "baseUrl": "./",
     "target": "es5",
     "lib": [
       "dom",
@@ -21,6 +23,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "cypress/**/*.ts"
   ]
 }

@@ -9,7 +9,7 @@ Background:
 
  @createUser @positive
  Cenário: Criar um usuário com todos os campos preenchidos
-   Quando preencho todos os dados corretamente
+   Quando preencho todos os dados
    E clico no botão de "salvar"
    Entao um usuário é criado com sucesso 
    E seus dados são renderizados na tela principal
@@ -23,23 +23,49 @@ Background:
    E a resposta da API deve retornar o status 201
 
 
- @createUser @negative
+@createUser @negative
 
-Cenário: Criar um usuário sem nome
+Cenário: Falhar ao criar um usuário sem nome
    Quando não preencho o nome
+   E preeencho todos os outros campos
    E clico no botão de "salvar"
    Entao aparece uma mensagem de aviso "Please fill out this field"
 
- Cenário: Criar um usuário sem email
+ Cenário: Falhar ao criar um usuário sem email
    Quando não preencho o email
+   E preeencho todos os outros campos
    E clico no botão de "salvar"
    Entao aparece uma mensagem de aviso "Please fill out this field"
 
+ Cenário: Falhar ao criar um usuário sem telefone
+   Quando não preencho o telefone
+   E preeencho todos os outros campos
+   E clico no botão de "salvar"
+   Entao aparece uma mensagem de aviso "Please fill out this field"
+
+ Cenário: Falhar ao criar um usuário sem empresa
+   Quando não preencho a opção de empresa
+   E preeencho todos os outros campos
+   E clico no botão de "salvar"
+   Entao aparece um popup de erro
+
+ Cenário: Falhar ao criar um usuário com data no formato errado 
+   Quando preencho a data com o formato inválido
+   E preeencho todos os outros campos
+   E clico no botão de "salvar"
+   Entao aparece um popup de erro 
+
+ Cenario: Falhar ao criar um email com formato qualquer
+  Quando preeencho email com o texto "meu email"
+   E clico no botão de "salvar"
+   Entao aparece um popup de erro 
 
  @getAllUsers
  Cenário: Listar todos os usuários
    E existem usuários cadastrados no sistema
-   Então o status da resposta deve ser 200
+   Quando a pagina carrega completamente
+   Então aparece uma lista de usuários na pagina
+   E a API responde a request com o status code 200
    E o corpo da resposta deve conter uma lista de usuários
 
 
@@ -49,16 +75,14 @@ Cenário: Atualizar os dados de um usuário
   Quando clico no botão de edição
   Então os dados do usuário devem aparecer com permissão para edição
   E após editar os dados, clico no botão de salvar
-  Então recebo um pop-up de confirmação
+  Então recebo um popup de confirmação
   E visualizo na página principal que as alterações foram salvas
 
 
 
  @deleteUser
  Cenário: Deletar um usuário
-   Quando acesso a pagina principal
-   E visualizo um usuário que quero deletar
-   E visualizo o botão de deletar
+   Dado que visualizo um botão de deletar 
    Quando clico no botão de deletar
    Entao devo receber um pop up de confirmação que o usuário foi deletado
-   E visualizo na página principal que o usuário foi removido
+   E visualizar na página principal que o usuário foi removido

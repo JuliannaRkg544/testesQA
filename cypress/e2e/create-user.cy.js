@@ -16,7 +16,7 @@ const bodyWithRequiredFields = {
 
 
 describe('Create one user', () => {
-  it('Should create a user with all fields', () => {
+  it('Should create a user with all valid fields', () => {
     cy.visit(mainpage)
     .get('#new-user').click()
     .get('input[placeholder="Nome"]').type(bodyWithAllFields.name)
@@ -39,6 +39,8 @@ describe('Create one user', () => {
     .get('#new-user').click()
     .get('input[placeholder="Nome"]').type(bodyWithRequiredFields.name)
     .get('input[placeholder="Email"]').type(bodyWithRequiredFields.email)
+    .get('input[placeholder="Telefone"]').type(bodyWithAllFields.telephone)
+    .get('input[placeholder="Data de nascimento"]').type(bodyWithAllFields.birth_date)
     .get('input[placeholder="Empresas"]').type(bodyWithRequiredFields.companies[0]) 
     .get('.optionContainer')
     .find('li') 
@@ -53,6 +55,9 @@ describe('Create one user', () => {
     cy.visit(mainpage)
     .get('#new-user').click()
     .get('input[placeholder="Email"]').type(bodyWithRequiredFields.email)
+    .get('input[placeholder="Telefone"]').type(bodyWithAllFields.telephone)
+    .get('input[placeholder="Cidade de nascimento"]').type(bodyWithAllFields.birth_city)
+    .get('input[placeholder="Data de nascimento"]').type(bodyWithAllFields.birth_date)
     .get('input[placeholder="Empresas"]').type(bodyWithRequiredFields.companies[0]) 
     .get('.optionContainer')
     .find('li') 
@@ -66,10 +71,13 @@ describe('Create one user', () => {
   })
  
 })
-it ('should receive a warnig message when creates a user with no email', ()=>{
+it ('should receive a warning message when creates a user with no email', ()=>{
   cy.visit(mainpage)
   .get('#new-user').click()
   .get('input[placeholder="Nome"]').type(bodyWithRequiredFields.name)
+  .get('input[placeholder="Telefone"]').type(bodyWithAllFields.telephone)
+  .get('input[placeholder="Cidade de nascimento"]').type(bodyWithAllFields.birth_city)
+  .get('input[placeholder="Data de nascimento"]').type(bodyWithAllFields.birth_date)
   .get('input[placeholder="Empresas"]').type(bodyWithRequiredFields.companies[0]) 
   .get('.optionContainer')
   .find('li') 
@@ -83,4 +91,25 @@ it ('should receive a warnig message when creates a user with no email', ()=>{
 })
 
 })
+it ('should receive a warning message when creates a user with no birthdate', ()=>{
+  cy.visit(mainpage)
+  .get('#new-user').click()
+  .get('input[placeholder="Nome"]').type(bodyWithRequiredFields.name)
+  .get('input[placeholder="Email"]').type(bodyWithRequiredFields.email)
+  .get('input[placeholder="Telefone"]').type(bodyWithAllFields.telephone)
+  .get('input[placeholder="Cidade de nascimento"]').type(bodyWithAllFields.birth_city)
+  .get('input[placeholder="Empresas"]').type(bodyWithRequiredFields.companies[0]) 
+  .get('.optionContainer')
+  .find('li') 
+  .contains(bodyWithRequiredFields.companies[0]) 
+  .click()
+  .get('button[type="submit"]').click({ force: true })
+  .get('input[placeholder="Data de nascimento"]')
+  .then(($input) => {
+    expect($input[0].checkValidity()).to.be.false; 
+    expect($input[0].validationMessage).to.contain('Please fill out this field');
+})
+})
+
+  
 })
